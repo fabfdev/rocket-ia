@@ -9,6 +9,7 @@ material = "1.13.0"
 activity = "1.13.0"
 constraintlayout = "2.2.1"
 lottie = "6.6.2"
+navigation = "2.8.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -20,6 +21,11 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+
+[bundles]
+navigation = [ "navigation-ui-ktx", "navigation-fragment-ktx" ]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
