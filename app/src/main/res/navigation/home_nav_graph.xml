@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/AIChatFragment"
-        android:name="br.com.fabfdev.rocketia.AIChatFragment"
+        android:name="br.com.fabfdev.rocketia.ui.AIChatFragment"
         android:label="AIChatFragment"
         tools:layout="@layout/fragment_ai_chat"/>
 
     <fragment
         android:id="@+id/AIChatHistoryFragment"
-        android:name="br.com.fabfdev.rocketia.AIChatHistoryFragment"
+        android:name="br.com.fabfdev.rocketia.ui.AIChatHistoryFragment"
         android:label="AIChatHistoryFragment"
         tools:layout="@layout/fragment_ai_chat_history"/>
 

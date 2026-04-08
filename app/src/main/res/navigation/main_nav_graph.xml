@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="br.com.fabfdev.rocketia.WelcomeFragment"
+        android:name="br.com.fabfdev.rocketia.ui.WelcomeFragment"
         android:label="WelcomeFragment"
         tools:layout="@layout/fragment_welcome">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/chooseStackFragment"
-        android:name="br.com.fabfdev.rocketia.ChooseStackFragment"
+        android:name="br.com.fabfdev.rocketia.ui.ChooseStackFragment"
         android:label="ChooseStackFragment"
         tools:layout="@layout/fragment_choose_stack">
         <action
@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="br.com.fabfdev.rocketia.HomeFragment"
+        android:name="br.com.fabfdev.rocketia.ui.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home" >
         <action
