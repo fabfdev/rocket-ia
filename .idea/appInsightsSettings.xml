@@ -22,10 +22,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="br.com.fabfdev.rocketia" />
+                  <option name="mobileSdkAppId" value="1:541971152709:android:4f0278118b41614ae7c82c" />
+                  <option name="projectId" value="rocketia-3086b" />
+                  <option name="projectNumber" value="541971152709" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
