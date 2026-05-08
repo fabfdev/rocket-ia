@@ -8,9 +8,11 @@ appcompat = "1.7.1"
 material = "1.13.0"
 activity = "1.13.0"
 constraintlayout = "2.2.1"
-lottie = "6.6.2"
-navigation = "2.8.7"
-firebase-bom = "34.11.0"
+lottie = "6.7.1"
+navigation = "2.9.8"
+firebase-bom = "34.12.0"
+room = "2.6.1"
+ksp = "2.3.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -27,11 +29,16 @@ navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-kt
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-ai = { module = "com.google.firebase:firebase-ai" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 
 [bundles]
 navigation = [ "navigation-ui-ktx", "navigation-fragment-ktx" ]
 firebase = [ "firebase-analytics", "firebase-ai" ]
+room = [ "androidx-room-ktx", "androidx-room-runtime" ]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
