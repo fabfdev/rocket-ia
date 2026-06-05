@@ -8,7 +8,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flatMapLatest
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.withContext
 
@@ -21,7 +20,7 @@ class AIChatLocalDataSourceImpl(
     @OptIn(ExperimentalCoroutinesApi::class)
     override val aiCurrentChatBySelectedStack: Flow<List<AIChatTextEntity>>
         get() = userSettingsPreferences.selectedStack.flatMapLatest { selectedStack ->
-            aiChatHistoryDao.getAllByStack(selectedStack)
+            aiChatHistoryDao.getAllByStack(selectedStack.orEmpty())
         }.flowOn(dispatcher)
 
     override suspend fun insertAIChatConversation(
@@ -33,7 +32,7 @@ class AIChatLocalDataSourceImpl(
         }
     }
 
-    override val selectedStack: Flow<String>
+    override val selectedStack: Flow<String?>
         get() = userSettingsPreferences
             .selectedStack
             .flowOn(dispatcher)
@@ -44,14 +43,4 @@ class AIChatLocalDataSourceImpl(
         }
     }
 
-    override val firstLaunch: Flow<Boolean>
-        get() = userSettingsPreferences
-            .firstLaunch
-            .flowOn(dispatcher)
-
-    override suspend fun changeFirstLaunch() {
-        withContext(dispatcher) {
-            userSettingsPreferences.changeFirstLaunch()
-        }
-    }
 }

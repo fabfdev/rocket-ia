@@ -3,7 +3,6 @@ package br.com.fabfdev.rocketia.data.local.preferences
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
@@ -16,7 +15,6 @@ private const val SELECTED_STACK_KEY = "selected_stack"
 private val SELECTED_STACK_PREFERENCES_KEY = stringPreferencesKey(SELECTED_STACK_KEY)
 
 private const val FIRST_LAUNCH_KEY = "first_launch"
-private val FIRST_LAUNCH_PREFERENCES_KEY = booleanPreferencesKey(FIRST_LAUNCH_KEY)
 
 class UserSettingsDataStorePreferencesImpl(
     private val context: Context,
@@ -26,9 +24,9 @@ class UserSettingsDataStorePreferencesImpl(
         name = USER_SETTINGS_DATASTORE_NAME
     )
 
-    override val selectedStack: Flow<String>
+    override val selectedStack: Flow<String?>
         get() = context.datastore.data.map { preferences ->
-            preferences[SELECTED_STACK_PREFERENCES_KEY].orEmpty()
+            preferences[SELECTED_STACK_PREFERENCES_KEY]
         }
 
     override suspend fun changeSelectedStack(stack: String) {
@@ -37,15 +35,4 @@ class UserSettingsDataStorePreferencesImpl(
         }
     }
 
-    override val firstLaunch: Flow<Boolean>
-        get() = context.datastore.data.map { preferences ->
-            preferences[FIRST_LAUNCH_PREFERENCES_KEY] != false
-        }
-
-    override suspend fun changeFirstLaunch() {
-        context.datastore.edit { settings ->
-            val currentFirstLaunch = settings[FIRST_LAUNCH_PREFERENCES_KEY] != false
-            settings[FIRST_LAUNCH_PREFERENCES_KEY] = !currentFirstLaunch
-        }
-    }
 }
