@@ -1,4 +1,4 @@
-package br.com.fabfdev.rocketia.ui
+package br.com.fabfdev.rocketia.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

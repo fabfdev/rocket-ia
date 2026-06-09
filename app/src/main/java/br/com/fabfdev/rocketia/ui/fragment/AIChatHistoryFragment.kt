@@ -1,4 +1,4 @@
-package br.com.fabfdev.rocketia.ui
+package br.com.fabfdev.rocketia.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-class HomeFragment: Fragment() {
+class AIChatHistoryFragment: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
