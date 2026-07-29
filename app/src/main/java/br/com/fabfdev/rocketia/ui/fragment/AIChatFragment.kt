@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import br.com.fabfdev.rocketia.R
 
 class AIChatFragment: Fragment() {
 
@@ -13,7 +14,7 @@ class AIChatFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater.inflate(R.layout.fragment_ai_chat, container, false)
     }
 
 }
