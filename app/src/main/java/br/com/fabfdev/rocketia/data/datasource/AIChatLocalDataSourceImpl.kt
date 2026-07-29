@@ -4,7 +4,6 @@ import br.com.fabfdev.rocketia.data.local.database.AIChatHistoryDao
 import br.com.fabfdev.rocketia.data.local.database.AIChatTextEntity
 import br.com.fabfdev.rocketia.data.local.preferences.UserSettingsPreferences
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flatMapLatest
@@ -14,7 +13,7 @@ import kotlinx.coroutines.withContext
 class AIChatLocalDataSourceImpl(
     private val aiChatHistoryDao: AIChatHistoryDao,
     private val userSettingsPreferences: UserSettingsPreferences,
-    private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
+    private val dispatcher: CoroutineDispatcher,
 ) : AIChatLocalDataSource {
 
     @OptIn(ExperimentalCoroutinesApi::class)
