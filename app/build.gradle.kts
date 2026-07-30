@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     id("com.google.gms.google-services")
     alias(libs.plugins.ksp)
+    alias(libs.plugins.dagger.hilt.android)
 }
 
 android {
@@ -53,6 +54,8 @@ dependencies {
     implementation(libs.bundles.room)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.koin.android)
+    implementation(libs.dagger.hilt.android)
+    ksp(libs.dagger.hilt.compile)
     ksp(libs.androidx.room.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
