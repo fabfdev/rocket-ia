@@ -9,7 +9,7 @@ import br.com.fabfdev.rocketia.R
 import br.com.fabfdev.rocketia.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+//@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

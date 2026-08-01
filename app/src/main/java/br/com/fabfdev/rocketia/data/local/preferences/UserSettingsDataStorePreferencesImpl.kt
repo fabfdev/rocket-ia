@@ -17,7 +17,7 @@ private val SELECTED_STACK_PREFERENCES_KEY = stringPreferencesKey(SELECTED_STACK
 
 private const val FIRST_LAUNCH_KEY = "first_launch"
 
-class UserSettingsDataStorePreferencesImpl @Inject constructor(
+class UserSettingsDataStorePreferencesImpl/* @Inject constructor*/(
     private val context: Context,
 ) : UserSettingsPreferences {
 

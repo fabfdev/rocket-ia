@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class AIChatRepositoryImpl @Inject constructor(
+class AIChatRepositoryImpl/* @Inject constructor*/(
     private val aiChatLocalDataSource: AIChatLocalDataSource,
     private val aiChatRemoteDataSource: AIChatRemoteDataSource
 ) : AIChatRepository {

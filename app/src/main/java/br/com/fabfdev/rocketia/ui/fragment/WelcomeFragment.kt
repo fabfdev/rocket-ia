@@ -16,14 +16,14 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-@AndroidEntryPoint
+//@AndroidEntryPoint
 class WelcomeFragment : Fragment() {
 
     private var _binding: FragmentWelcomeBinding? = null
     private val binding: FragmentWelcomeBinding get() = _binding!!
 
-//    private val viewModel: WelcomeViewModel by viewModel()
-    private val viewModel: WelcomeViewModel by viewModels()
+    private val viewModel: WelcomeViewModel by viewModel()
+//    private val viewModel: WelcomeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

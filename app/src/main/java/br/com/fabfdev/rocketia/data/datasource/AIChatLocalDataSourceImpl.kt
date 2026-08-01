@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class AIChatLocalDataSourceImpl @Inject constructor(
+class AIChatLocalDataSourceImpl/* @Inject constructor*/(
     private val aiChatHistoryDao: AIChatHistoryDao,
     private val userSettingsPreferences: UserSettingsPreferences,
     private val dispatcher: CoroutineDispatcher,

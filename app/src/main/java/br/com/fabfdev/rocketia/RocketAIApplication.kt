@@ -9,13 +9,13 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
-@HiltAndroidApp
+//@HiltAndroidApp
 class RocketAIApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
 
-        /*startKoin {
+        startKoin {
             androidLogger()
             androidContext(this@RocketAIApplication)
             modules(
@@ -23,7 +23,7 @@ class RocketAIApplication : Application() {
                 domainModule,
                 uiModule
             )
-        }*/
+        }
     }
 
 }

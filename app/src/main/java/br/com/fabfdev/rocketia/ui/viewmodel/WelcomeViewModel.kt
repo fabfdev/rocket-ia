@@ -13,8 +13,8 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
-class WelcomeViewModel @Inject constructor(
+//@HiltViewModel
+class WelcomeViewModel/* @Inject constructor*/(
     private val checkHasSelectedStackUseCase: CheckHasSelectedStackUseCase,
 ) : ViewModel() {
 
