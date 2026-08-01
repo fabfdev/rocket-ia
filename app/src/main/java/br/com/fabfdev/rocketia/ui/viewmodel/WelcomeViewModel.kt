@@ -5,13 +5,16 @@ import androidx.lifecycle.viewModelScope
 import br.com.fabfdev.rocketia.domain.usecase.CheckHasSelectedStackUseCase
 import br.com.fabfdev.rocketia.ui.event.WelcomeUiEvent
 import br.com.fabfdev.rocketia.ui.state.WelcomeUiState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class WelcomeViewModel(
+@HiltViewModel
+class WelcomeViewModel @Inject constructor(
     private val checkHasSelectedStackUseCase: CheckHasSelectedStackUseCase,
 ) : ViewModel() {
 

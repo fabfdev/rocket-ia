@@ -15,9 +15,16 @@ import br.com.fabfdev.rocketia.data.remote.api.AIAPIService
 import br.com.fabfdev.rocketia.data.remote.api.AIGeminiAPIServiceImpl
 import br.com.fabfdev.rocketia.data.repository.AIChatRepositoryImpl
 import br.com.fabfdev.rocketia.domain.repository.AIChatRepository
+import br.com.fabfdev.rocketia.domain.usecase.ChangeStackUseCase
+import br.com.fabfdev.rocketia.domain.usecase.CheckHasSelectedStackUseCase
+import br.com.fabfdev.rocketia.domain.usecase.GetAIChatBySelectedStackUseCase
+import br.com.fabfdev.rocketia.domain.usecase.GetSelectedStackUseCase
+import br.com.fabfdev.rocketia.domain.usecase.SendUserQuestionUseCase
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
@@ -100,5 +107,54 @@ object DataModule {
             aiChatLocalDataSource,
             aiChatRemoteDataSource
         )
+
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class DataBindsModule {
+
+    /*@Binds
+    abstract fun bindAIApiService(
+        aiGeminiAPIServiceImpl: AIGeminiAPIServiceImpl
+    ): AIAPIService*/
+
+    /*
+    Usar @ApplicationContext no parametro do contexto na classe implementada
+    @Binds
+    abstract fun bindUserSettingsPreferences(
+        userSettingsDataStorePreferencesImpl: UserSettingsDataStorePreferencesImpl
+    ): UserSettingsPreferences*/
+
+}
+
+@Module
+@InstallIn(ViewModelComponent::class)
+object DomainModule {
+
+    @Provides
+    fun provideChangeStackUseCase(
+        aiChatRepository: AIChatRepository
+    ): ChangeStackUseCase = ChangeStackUseCase(aiChatRepository)
+
+    @Provides
+    fun provideCheckHasSelectedStackUseCase(
+        aiChatRepository: AIChatRepository
+    ): CheckHasSelectedStackUseCase = CheckHasSelectedStackUseCase(aiChatRepository)
+
+    @Provides
+    fun provideGetAIChatBySelectedStackUseCase(
+        aiChatRepository: AIChatRepository
+    ): GetAIChatBySelectedStackUseCase = GetAIChatBySelectedStackUseCase(aiChatRepository)
+
+    @Provides
+    fun provideGetSelectedStackUseCase(
+        aiChatRepository: AIChatRepository
+    ): GetSelectedStackUseCase = GetSelectedStackUseCase(aiChatRepository)
+
+    @Provides
+    fun provideSendUserQuestionUseCase(
+        aiChatRepository: AIChatRepository
+    ): SendUserQuestionUseCase = SendUserQuestionUseCase(aiChatRepository)
 
 }

@@ -8,6 +8,7 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
 private const val USER_SETTINGS_DATASTORE_NAME = "user_settings"
 
@@ -16,7 +17,7 @@ private val SELECTED_STACK_PREFERENCES_KEY = stringPreferencesKey(SELECTED_STACK
 
 private const val FIRST_LAUNCH_KEY = "first_launch"
 
-class UserSettingsDataStorePreferencesImpl(
+class UserSettingsDataStorePreferencesImpl @Inject constructor(
     private val context: Context,
 ) : UserSettingsPreferences {
 
