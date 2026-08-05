@@ -10,7 +10,6 @@ import br.com.fabfdev.rocketia.domain.repository.AIChatRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
 class AIChatRepositoryImpl/* @Inject constructor*/(
     private val aiChatLocalDataSource: AIChatLocalDataSource,
@@ -32,7 +31,7 @@ class AIChatRepositoryImpl/* @Inject constructor*/(
         answer?.let {
             aiChatLocalDataSource.insertAIChatConversation(
                 question = createUserQuestionEntity(question, stack),
-                answer = createAIAnswer(question, stack)
+                answer = createAIAnswer(answer, stack)
             )
         }
     }
@@ -48,9 +47,9 @@ class AIChatRepositoryImpl/* @Inject constructor*/(
         datetime = System.currentTimeMillis()
     )
 
-    private fun createAIAnswer(question: String, stack: String) = AIChatTextEntity(
+    private fun createAIAnswer(answer: String, stack: String) = AIChatTextEntity(
         stack = stack,
-        text = question,
+        text = answer,
         from = AIChatTextType.AI_ANSWER.name,
         datetime = System.currentTimeMillis()
     )
