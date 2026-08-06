@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.koin.android)
     implementation(libs.dagger.hilt.android)
+    implementation(libs.androidx.recyclerview)
     ksp(libs.dagger.hilt.compile)
     ksp(libs.androidx.room.compiler)
     testImplementation(libs.junit)

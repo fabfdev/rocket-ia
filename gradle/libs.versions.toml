@@ -16,6 +16,7 @@ room = "2.7.1"
 ksp = "2.3.7"
 datastore = "1.1.3"
 dagger-hilt = "2.60.1"
+recyclerview = "1.4.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,6 +40,7 @@ androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref =
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
 dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger-hilt" }
 dagger-hilt-compile = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger-hilt" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 
 [bundles]
 navigation = [ "navigation-ui-ktx", "navigation-fragment-ktx" ]
