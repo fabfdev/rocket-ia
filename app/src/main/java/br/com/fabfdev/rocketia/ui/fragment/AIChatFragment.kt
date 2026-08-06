@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.findNavController
 import br.com.fabfdev.rocketia.R
 import br.com.fabfdev.rocketia.databinding.FragmentAiChatBinding
 import br.com.fabfdev.rocketia.ui.event.AIChatEvent
@@ -38,6 +40,12 @@ class AIChatFragment : Fragment() {
         setupObservers()
 
         with(binding) {
+            val userSettingsPopupMenu = PopupMenu(requireContext(), ibUserSettings)
+            userSettingsPopupMenu.setupUserSettingsPopupMenu()
+            ibUserSettings.setOnClickListener {
+                userSettingsPopupMenu.show()
+            }
+
             tietAIQuestion.doOnTextChanged { _, _, _, _ ->
                 if (tilAIQuestion.error != null) {
                     tietAIQuestion.error = null
@@ -72,6 +80,21 @@ class AIChatFragment : Fragment() {
                         println("Size is: ${aiChatBySelectedStack.size}")
                     }
                 }
+            }
+        }
+    }
+
+    private fun PopupMenu.setupUserSettingsPopupMenu() {
+        this.menuInflater.inflate(R.menu.user_settings_menu, this.menu)
+        this.setOnMenuItemClickListener { itemMenu ->
+            when (itemMenu.itemId) {
+                R.id.action_change_stack -> {
+                    requireActivity().findNavController(R.id.fcvMainContainer)
+                        .navigate(R.id.action_homeFragment_to_chooseStackFragment)
+                    true
+                }
+
+                else -> false
             }
         }
     }
