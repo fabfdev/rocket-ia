@@ -56,6 +56,7 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.dagger.hilt.android)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.markwon)
     ksp(libs.dagger.hilt.compile)
     ksp(libs.androidx.room.compiler)
     testImplementation(libs.junit)

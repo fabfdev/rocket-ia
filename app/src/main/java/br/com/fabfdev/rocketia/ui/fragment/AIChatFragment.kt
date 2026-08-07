@@ -13,6 +13,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.findNavController
 import br.com.fabfdev.rocketia.R
 import br.com.fabfdev.rocketia.databinding.FragmentAiChatBinding
+import br.com.fabfdev.rocketia.ui.adapter.AIChatAdapter
 import br.com.fabfdev.rocketia.ui.event.AIChatEvent
 import br.com.fabfdev.rocketia.ui.viewmodel.AIChatViewModel
 import kotlinx.coroutines.launch
@@ -46,6 +47,8 @@ class AIChatFragment : Fragment() {
                 userSettingsPopupMenu.show()
             }
 
+            binding.rvStudyAIChat.adapter = AIChatAdapter()
+
             tietAIQuestion.doOnTextChanged { _, _, _, _ ->
                 if (tilAIQuestion.error != null) {
                     tietAIQuestion.error = null
@@ -77,7 +80,10 @@ class AIChatFragment : Fragment() {
                 }
                 launch {
                     viewModel.aiChatBySelectedStack.collect { aiChatBySelectedStack ->
-                        println("Size is: ${aiChatBySelectedStack.size}")
+                        val aiChatAdapter = binding.rvStudyAIChat.adapter as? AIChatAdapter
+                        aiChatAdapter?.apply {
+                            submitList(aiChatBySelectedStack)
+                        }
                     }
                 }
             }
