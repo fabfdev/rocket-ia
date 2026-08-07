@@ -15,6 +15,9 @@ import br.com.fabfdev.rocketia.R
 import br.com.fabfdev.rocketia.databinding.FragmentAiChatBinding
 import br.com.fabfdev.rocketia.ui.adapter.AIChatAdapter
 import br.com.fabfdev.rocketia.ui.event.AIChatEvent
+import br.com.fabfdev.rocketia.ui.extension.gone
+import br.com.fabfdev.rocketia.ui.extension.hideKeyboard
+import br.com.fabfdev.rocketia.ui.extension.visible
 import br.com.fabfdev.rocketia.ui.viewmodel.AIChatViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -61,6 +64,9 @@ class AIChatFragment : Fragment() {
                 } else {
                     tietAIQuestion.error = getString(R.string.campo_obrigatorio)
                 }
+                clearQuestionTextInput()
+                shouldEnableButton(false)
+                pbAIChatLoading.visible()
             }
         }
     }
@@ -80,9 +86,11 @@ class AIChatFragment : Fragment() {
                 }
                 launch {
                     viewModel.aiChatBySelectedStack.collect { aiChatBySelectedStack ->
+                        binding.pbAIChatLoading.gone()
+                        binding.shouldEnableButton(true)
                         val aiChatAdapter = binding.rvStudyAIChat.adapter as? AIChatAdapter
-                        aiChatAdapter?.apply {
-                            submitList(aiChatBySelectedStack)
+                        aiChatAdapter?.submitList(aiChatBySelectedStack) {
+                            binding.rvStudyAIChat.smoothScrollToPosition(0)
                         }
                     }
                 }
@@ -103,6 +111,16 @@ class AIChatFragment : Fragment() {
                 else -> false
             }
         }
+    }
+
+    private fun FragmentAiChatBinding.clearQuestionTextInput() {
+        tilAIQuestion.clearFocus()
+        tietAIQuestion.text = null
+        root.hideKeyboard()
+    }
+
+    private fun FragmentAiChatBinding.shouldEnableButton(enable: Boolean) {
+        btnSendAIQuestion.isEnabled = enable
     }
 
     override fun onDestroyView() {

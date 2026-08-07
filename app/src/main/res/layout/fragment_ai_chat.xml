@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:gravity="top|start"
             android:hint="@string/qual_a_sua_duvida_sobre"
-            android:lines="3"
+            android:inputType="textCapSentences"
             android:textColor="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -92,5 +92,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pbAIChatLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/brand"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSendAIQuestion"
+        app:layout_constraintEnd_toEndOf="@+id/btnSendAIQuestion"
+        app:layout_constraintStart_toStartOf="@+id/btnSendAIQuestion"
+        app:layout_constraintTop_toTopOf="@+id/btnSendAIQuestion"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
