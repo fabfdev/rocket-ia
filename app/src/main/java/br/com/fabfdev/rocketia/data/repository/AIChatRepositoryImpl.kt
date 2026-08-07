@@ -40,6 +40,10 @@ class AIChatRepositoryImpl/* @Inject constructor*/(
         aiChatLocalDataSource.changeSelectedStack(stack)
     }
 
+    override suspend fun getAIChatByStack(stack: String): List<AIChatText> {
+        return aiChatLocalDataSource.getAIChatByStack(stack).toDomain()
+    }
+
     private fun createUserQuestionEntity(question: String, stack: String) = AIChatTextEntity(
         stack = stack,
         text = question,

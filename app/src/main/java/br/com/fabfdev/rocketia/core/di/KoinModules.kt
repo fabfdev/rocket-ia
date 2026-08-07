@@ -19,6 +19,7 @@ import br.com.fabfdev.rocketia.domain.usecase.CheckHasSelectedStackUseCase
 import br.com.fabfdev.rocketia.domain.usecase.GetAIChatBySelectedStackUseCase
 import br.com.fabfdev.rocketia.domain.usecase.GetSelectedStackUseCase
 import br.com.fabfdev.rocketia.domain.usecase.SendUserQuestionUseCase
+import br.com.fabfdev.rocketia.ui.viewmodel.AIChatHistoryViewModel
 import br.com.fabfdev.rocketia.ui.viewmodel.AIChatViewModel
 import br.com.fabfdev.rocketia.ui.viewmodel.ChooseStackViewModel
 import br.com.fabfdev.rocketia.ui.viewmodel.WelcomeViewModel
@@ -74,4 +75,5 @@ val uiModule = module {
     viewModelOf(::WelcomeViewModel)
     viewModelOf(::ChooseStackViewModel)
     viewModelOf(::AIChatViewModel)
+    viewModelOf(::AIChatHistoryViewModel)
 }

@@ -8,4 +8,5 @@ interface AIChatLocalDataSource {
     suspend fun insertAIChatConversation(question: AIChatTextEntity, answer: AIChatTextEntity)
     val selectedStack: Flow<String?>
     suspend fun changeSelectedStack(stack: String)
+    suspend fun getAIChatByStack(stack: String): List<AIChatTextEntity>
 }

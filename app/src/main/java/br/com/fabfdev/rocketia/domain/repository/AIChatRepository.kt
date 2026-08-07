@@ -8,4 +8,5 @@ interface AIChatRepository {
     val aiChatBySelectedStack: Flow<List<AIChatText>>
     suspend fun sendUserQuestion(question: String)
     suspend fun changeStack(stack: String)
+    suspend fun getAIChatByStack(stack: String): List<AIChatText>
 }
