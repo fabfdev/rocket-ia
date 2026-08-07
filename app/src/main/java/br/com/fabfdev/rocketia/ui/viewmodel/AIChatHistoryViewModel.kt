@@ -29,19 +29,24 @@ class AIChatHistoryViewModel(
         MutableStateFlow(emptyList())
     val aiChatHistoryBySelectedStack: StateFlow<List<AIChatText>> =
         _aiChatHistoryBySelectedStack.asStateFlow()
+    private val _selectedStackChipId = MutableStateFlow<Int?>(null)
+    val selectedStackChipId: StateFlow<Int?> = _selectedStackChipId.asStateFlow()
 
     fun onEvent(event: AIChatHistoryEvent) {
         when (event) {
-            is AIChatHistoryEvent.GetAIChatHistoryBySelectedStack -> getAIChatHistoryBySelectedStack(
-                event.stack
+            is AIChatHistoryEvent.SelectedStack -> getAIChatHistoryBySelectedStack(
+                event.selectedStackName,
+                event.selectedStackChipId
             )
         }
     }
 
-    private fun getAIChatHistoryBySelectedStack(stack: String) {
+    private fun getAIChatHistoryBySelectedStack(selectedStackName: String, selectedStackId: Int) {
         viewModelScope.launch {
-            val aiChatBySelectedStack = getAIChatBySelectedStackUseCase(stack)
-            _aiChatHistoryBySelectedStack.update { aiChatBySelectedStack }
+            val aiChatBySelectedStack = getAIChatBySelectedStackUseCase(selectedStackName)
+            _aiChatHistoryBySelectedStack.update { aiChatBySelectedStack }.also {
+                _selectedStackChipId.update { selectedStackId }
+            }
         }
     }
 
