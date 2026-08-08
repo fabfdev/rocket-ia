@@ -20,7 +20,6 @@ import br.com.fabfdev.rocketia.domain.usecase.CheckHasSelectedStackUseCase
 import br.com.fabfdev.rocketia.domain.usecase.GetAIChatBySelectedStackUseCase
 import br.com.fabfdev.rocketia.domain.usecase.GetSelectedStackUseCase
 import br.com.fabfdev.rocketia.domain.usecase.SendUserQuestionUseCase
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

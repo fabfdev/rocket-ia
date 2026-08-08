@@ -1,6 +1,6 @@
-package br.com.fabfdev.rocketia.domain.repository
+package br.com.fabfdev.core.domain.repository
 
-import br.com.fabfdev.rocketia.domain.model.AIChatText
+import br.com.fabfdev.core.domain.model.AIChatText
 import kotlinx.coroutines.flow.Flow
 
 interface AIChatRepository {
