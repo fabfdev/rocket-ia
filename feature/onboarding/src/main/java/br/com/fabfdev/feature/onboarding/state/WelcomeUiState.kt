@@ -1,4 +1,4 @@
-package br.com.fabfdev.rocketia.ui.state
+package br.com.fabfdev.feature.onboarding.state
 
 data class WelcomeUiState(
     val hasSelectedStack: Boolean? = null

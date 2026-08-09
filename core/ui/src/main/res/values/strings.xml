@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="react_native">React Native</string>
+    <string name="ia">IA</string>
+    <string name="go">Go</string>
+    <string name="kotlin">Kotlin</string>
+    <string name="csharp">C#</string>
+    <string name="php">PHP</string>
+    <string name="devops">DevOps</string>
+    <string name="full_stack">Full-Stack</string>
+    <string name="java">Java</string>
+    <string name="python">Python</string>
+    <string name="react">React</string>
+    <string name="node_js">Node.JS</string>
+    <string name="swift">Swift</string>
+</resources>

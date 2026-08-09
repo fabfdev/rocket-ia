@@ -1,20 +1,19 @@
-package br.com.fabfdev.rocketia.ui.fragment
+package br.com.fabfdev.feature.onboarding.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import br.com.fabfdev.rocketia.R
-import br.com.fabfdev.rocketia.databinding.FragmentWelcomeBinding
-import br.com.fabfdev.rocketia.ui.event.WelcomeUiEvent
-import br.com.fabfdev.rocketia.ui.viewmodel.WelcomeViewModel
-import dagger.hilt.android.AndroidEntryPoint
+import br.com.fabfdev.core.navigation.DeepLinks
+import br.com.fabfdev.feature.onboarding.event.WelcomeUiEvent
+import br.com.fabfdev.feature.onboarding.viewmodel.WelcomeViewModel
+import br.com.fabfdev.feature.onboarding.databinding.FragmentWelcomeBinding
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -45,7 +44,7 @@ class WelcomeFragment : Fragment() {
 
         with(binding) {
             btnWelcomeStart.setOnClickListener {
-                findNavController().navigate(R.id.action_welcomeFragment_to_chooseStackFragment)
+                findNavController().navigate(DeepLinks.CHOOSE_STACK.toUri())
             }
         }
     }
@@ -56,7 +55,7 @@ class WelcomeFragment : Fragment() {
                 viewModel.uiState.collect { uiState ->
                     uiState.hasSelectedStack?.let { hasSelectedStack ->
                         if (hasSelectedStack) {
-                            findNavController().navigate(R.id.action_welcomeFragment_to_homeFragment)
+                            findNavController().navigate(DeepLinks.HOME.toUri())
                         } else {
                             binding.pbProgressBar.visibility = View.GONE
                             binding.llWelcomeContainer.visibility = View.VISIBLE

@@ -1,4 +1,4 @@
-package br.com.fabfdev.rocketia.ui.event
+package br.com.fabfdev.feature.onboarding.event
 
 sealed interface WelcomeUiEvent {
     object CheckHasSelectedStack: WelcomeUiEvent

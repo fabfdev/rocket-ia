@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">RocketIA</string>
-    <string name="o_seu_assistente_de_estudos_em_programacao">O seu assistente de estudos em programação.</string>
-    <string name="seja_bem_vindo_a_rocketia">Seja bem-vindo(a) à RocketIA!</string>
-    <string name="escolha_uma_area_de_estudos">Escolha uma área de estudos.\nTire suas dúvidas.\nArmazene conhecimentos.</string>
-    <string name="iniciar">Iniciar</string>
     <string name="qual_area_de_programacao_vamos_estudar_juntos">Qual área de programação vamos estudar juntos?</string>
     <string name="confirmar">Confirmar</string>
     <string name="ola_dev">Olá, Dev!\nVamos começar seus estudos sobre %1$s?</string>
@@ -18,18 +14,5 @@
     <string name="menu_configuracoes">Configurações</string>
     <string name="menu_chat">Chat</string>
     <string name="menu_historico">Histórico</string>
-    <string name="react_native">React Native</string>
-    <string name="ia">IA</string>
-    <string name="go">Go</string>
-    <string name="kotlin">Kotlin</string>
-    <string name="csharp">C#</string>
-    <string name="php">PHP</string>
-    <string name="devops">DevOps</string>
-    <string name="full_stack">Full-Stack</string>
-    <string name="java">Java</string>
-    <string name="python">Python</string>
-    <string name="react">React</string>
-    <string name="node_js">Node.JS</string>
-    <string name="swift">Swift</string>
     <string name="campo_obrigatorio">Campo obrigatório.</string>
 </resources>
