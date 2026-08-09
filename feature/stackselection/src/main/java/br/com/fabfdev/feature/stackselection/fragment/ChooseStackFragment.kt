@@ -1,18 +1,20 @@
-package br.com.fabfdev.rocketia.ui.fragment
+package br.com.fabfdev.feature.stackselection.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import br.com.fabfdev.rocketia.R
-import br.com.fabfdev.rocketia.databinding.FragmentChooseStackBinding
-import br.com.fabfdev.rocketia.ui.event.ChooseStackUiEvent
-import br.com.fabfdev.rocketia.ui.viewmodel.ChooseStackViewModel
+import br.com.fabfdev.core.navigation.DeepLinks
+import br.com.fabfdev.core.ui.R
+import br.com.fabfdev.feature.stackselection.databinding.FragmentChooseStackBinding
+import br.com.fabfdev.feature.stackselection.event.ChooseStackUiEvent
+import br.com.fabfdev.feature.stackselection.viewmodel.ChooseStackViewModel
 import com.google.android.material.chip.Chip
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -41,7 +43,7 @@ class ChooseStackFragment : Fragment() {
         with(binding) {
             setupStackChips()
             btnChooseStackConfirm.setOnClickListener {
-                findNavController().navigate(R.id.action_chooseStackFragment_to_homeFragment)
+                findNavController().navigate(DeepLinks.CHOOSE_STACK.toUri())
             }
         }
     }

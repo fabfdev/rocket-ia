@@ -1,9 +1,9 @@
-package br.com.fabfdev.rocketia.ui.viewmodel
+package br.com.fabfdev.feature.stackselection.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.fabfdev.rocketia.domain.usecase.ChangeStackUseCase
-import br.com.fabfdev.rocketia.ui.event.ChooseStackUiEvent
+import br.com.fabfdev.core.domain.usecase.ChangeStackUseCase
+import br.com.fabfdev.feature.stackselection.event.ChooseStackUiEvent
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
