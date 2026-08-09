@@ -1,19 +1,19 @@
-package br.com.fabfdev.rocketia.ui.fragment
+package br.com.fabfdev.feature.aichat.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.doOnLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import br.com.fabfdev.rocketia.R
-import br.com.fabfdev.rocketia.databinding.FragmentAiChatHistoryBinding
-import br.com.fabfdev.rocketia.ui.adapter.AIChatAdapter
-import br.com.fabfdev.rocketia.ui.event.AIChatHistoryEvent
-import br.com.fabfdev.rocketia.ui.viewmodel.AIChatHistoryViewModel
-import androidx.core.view.doOnLayout
+import br.com.fabfdev.core.ui.R
+import br.com.fabfdev.feature.aichat.adapter.AIChatAdapter
+import br.com.fabfdev.feature.aichat.databinding.FragmentAiChatHistoryBinding
+import br.com.fabfdev.feature.aichat.event.AIChatHistoryEvent
+import br.com.fabfdev.feature.aichat.viewmodel.AIChatHistoryViewModel
 import com.google.android.material.chip.Chip
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel

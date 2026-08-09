@@ -43,7 +43,7 @@ class ChooseStackFragment : Fragment() {
         with(binding) {
             setupStackChips()
             btnChooseStackConfirm.setOnClickListener {
-                findNavController().navigate(DeepLinks.CHOOSE_STACK.toUri())
+                findNavController().navigate(DeepLinks.HOME.toUri())
             }
         }
     }
