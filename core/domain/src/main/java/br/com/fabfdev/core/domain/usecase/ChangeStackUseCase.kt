@@ -1,7 +1,6 @@
-package br.com.fabfdev.rocketia.domain.usecase
+package br.com.fabfdev.core.domain.usecase
 
-import br.com.fabfdev.rocketia.domain.repository.AIChatRepository
-import javax.inject.Inject
+import br.com.fabfdev.core.domain.repository.AIChatRepository
 
 class ChangeStackUseCase/* @Inject constructor*/(
     private val repository: AIChatRepository

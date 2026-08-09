@@ -1,8 +1,7 @@
-package br.com.fabfdev.rocketia.domain.usecase
+package br.com.fabfdev.core.domain.usecase
 
-import br.com.fabfdev.rocketia.domain.repository.AIChatRepository
+import br.com.fabfdev.core.domain.repository.AIChatRepository
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
 
 class GetSelectedStackUseCase/* @Inject constructor*/(
     private val repository: AIChatRepository

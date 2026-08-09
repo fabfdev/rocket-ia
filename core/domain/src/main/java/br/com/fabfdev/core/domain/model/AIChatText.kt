@@ -1,4 +1,4 @@
-package br.com.fabfdev.rocketia.domain.model
+package br.com.fabfdev.core.domain.model
 
 sealed class AIChatText {
     data class UserQuestion(val question: String): AIChatText()
