@@ -1,4 +1,4 @@
-package br.com.fabfdev.rocketia.ui.extension
+package br.com.fabfdev.core.common.extension
 
 import android.view.View
 import android.view.inputmethod.InputMethodManager
