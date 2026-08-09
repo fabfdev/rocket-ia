@@ -1,0 +1,60 @@
+package br.com.fabfdev.core.data.repository
+
+import br.com.fabfdev.core.data.datasource.AIChatLocalDataSource
+import br.com.fabfdev.core.data.datasource.AIChatRemoteDataSource
+import br.com.fabfdev.core.data.local.database.AIChatTextEntity
+import br.com.fabfdev.core.data.mapper.toDomain
+import br.com.fabfdev.core.domain.model.AIChatText
+import br.com.fabfdev.core.domain.model.AIChatTextType
+import br.com.fabfdev.core.domain.repository.AIChatRepository
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.map
+
+class AIChatRepositoryImpl/* @Inject constructor*/(
+    private val aiChatLocalDataSource: AIChatLocalDataSource,
+    private val aiChatRemoteDataSource: AIChatRemoteDataSource
+) : AIChatRepository {
+    override val selectedStack: Flow<String?>
+        get() = aiChatLocalDataSource.selectedStack
+
+    override val aiChatBySelectedStack: Flow<List<AIChatText>>
+        get() = aiChatLocalDataSource
+            .aiCurrentChatBySelectedStack
+            .map { currentChatEntity ->
+                currentChatEntity.toDomain()
+            }
+
+    override suspend fun sendUserQuestion(question: String) {
+        val stack = selectedStack.firstOrNull().orEmpty()
+        val answer = aiChatRemoteDataSource.sendPrompt(stack = stack, question = question)
+        answer?.let {
+            aiChatLocalDataSource.insertAIChatConversation(
+                question = createUserQuestionEntity(question, stack),
+                answer = createAIAnswer(answer, stack)
+            )
+        }
+    }
+
+    override suspend fun changeStack(stack: String) {
+        aiChatLocalDataSource.changeSelectedStack(stack)
+    }
+
+    override suspend fun getAIChatByStack(stack: String): List<AIChatText> {
+        return aiChatLocalDataSource.getAIChatByStack(stack).toDomain()
+    }
+
+    private fun createUserQuestionEntity(question: String, stack: String) = AIChatTextEntity(
+        stack = stack,
+        text = question,
+        from = AIChatTextType.USER_QUESTION.name,
+        datetime = System.currentTimeMillis()
+    )
+
+    private fun createAIAnswer(answer: String, stack: String) = AIChatTextEntity(
+        stack = stack,
+        text = answer,
+        from = AIChatTextType.AI_ANSWER.name,
+        datetime = System.currentTimeMillis()
+    )
+}
