@@ -1,4 +1,4 @@
-package br.com.fabfdev.rocketia.ui.adapter
+package br.com.fabfdev.feature.aichat.adapter
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
-import br.com.fabfdev.rocketia.R
-import br.com.fabfdev.rocketia.databinding.ItemAiChatBalloonBinding
-import br.com.fabfdev.rocketia.databinding.ItemUserChatBalloonBinding
-import br.com.fabfdev.rocketia.domain.model.AIChatText
+import br.com.fabfdev.core.domain.model.AIChatText
+import br.com.fabfdev.feature.aichat.R
+import br.com.fabfdev.feature.aichat.databinding.ItemAiChatBalloonBinding
+import br.com.fabfdev.feature.aichat.databinding.ItemUserChatBalloonBinding
 import io.noties.markwon.Markwon
 
 private const val AI_ANSWER_CLIP_DATA_LABEL = "Resposta da IA copiada!"

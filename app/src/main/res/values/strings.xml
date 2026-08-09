@@ -1,15 +1,8 @@
 <resources>
-    <string name="ola_dev">Olá, Dev!\nVamos começar seus estudos sobre %1$s?</string>
-    <string name="o_que_e_a_classe_context">O que é a classe Context?</string>
-    <string name="a_classe_context_e_uma_classe_abstrata_do_android">A classe Context é uma classe abstrata do Android que permite acessar informações globais sobre o ambiente de uma aplicação. Ela é a classe base para Activity, Service e Application.</string>
     <string name="devo_usar_para_que">Devo usar para quê?</string>
     <string name="a_classe_context_no_android_e_uma_das_classes_mais_importantes">A classe Context no Android é uma das classes mais importantes e utilizadas no desenvolvimento de aplicativos para a plataforma. Ela fornece acesso a recursos e informações do ambiente do aplicativo, além de permitir a interação com o sistema…</string>
     <string name="como_evitar_memory_leaks_com_a_classe">Como evitar memory leaks com a classe</string>
-    <string name="qual_a_sua_duvida_sobre">Qual a sua dúvida sobre %1$s?</string>
-    <string name="enviar">Enviar</string>
-    <string name="alterar_stack">Alterar Stack</string>
     <string name="menu_configuracoes">Configurações</string>
     <string name="menu_chat">Chat</string>
     <string name="menu_historico">Histórico</string>
-    <string name="campo_obrigatorio">Campo obrigatório.</string>
 </resources>

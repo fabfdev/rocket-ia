@@ -1,24 +1,27 @@
-package br.com.fabfdev.rocketia.ui.fragment
+package br.com.fabfdev.feature.aichat.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import androidx.core.net.toUri
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.findNavController
-import br.com.fabfdev.rocketia.R
-import br.com.fabfdev.rocketia.databinding.FragmentAiChatBinding
-import br.com.fabfdev.rocketia.ui.adapter.AIChatAdapter
-import br.com.fabfdev.rocketia.ui.event.AIChatEvent
-import br.com.fabfdev.rocketia.ui.extension.gone
-import br.com.fabfdev.rocketia.ui.extension.hideKeyboard
-import br.com.fabfdev.rocketia.ui.extension.visible
-import br.com.fabfdev.rocketia.ui.viewmodel.AIChatViewModel
+import br.com.fabfdev.core.common.extension.gone
+import br.com.fabfdev.core.common.extension.hideKeyboard
+import br.com.fabfdev.core.common.extension.visible
+import br.com.fabfdev.core.navigation.DeepLinks
+import br.com.fabfdev.feature.aichat.R
+import br.com.fabfdev.core.navigation.R as RNav
+import br.com.fabfdev.feature.aichat.adapter.AIChatAdapter
+import br.com.fabfdev.feature.aichat.databinding.FragmentAiChatBinding
+import br.com.fabfdev.feature.aichat.event.AIChatEvent
+import br.com.fabfdev.feature.aichat.viewmodel.AIChatViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -103,8 +106,8 @@ class AIChatFragment : Fragment() {
         this.setOnMenuItemClickListener { itemMenu ->
             when (itemMenu.itemId) {
                 R.id.action_change_stack -> {
-                    requireActivity().findNavController(R.id.fcvMainContainer)
-                        .navigate(R.id.action_homeFragment_to_chooseStackFragment)
+                    requireActivity().findNavController(RNav.id.fcv_main_container)
+                        .navigate(DeepLinks.CHOOSE_STACK.toUri())
                     true
                 }
 

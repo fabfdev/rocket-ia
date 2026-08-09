@@ -7,25 +7,16 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="br.com.fabfdev.feature.onboarding.WelcomeFragment"
+        android:name="br.com.fabfdev.feature.onboarding.fragment.WelcomeFragment"
         android:label="WelcomeFragment"
-        tools:layout="@layout/fragment_welcome">
-        <action
-            android:id="@+id/action_welcomeFragment_to_chooseStackFragment"
-            app:destination="@id/chooseStackFragment" />
-        <action
-            android:id="@+id/action_welcomeFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_welcome" />
 
     <fragment
         android:id="@+id/chooseStackFragment"
         android:name="br.com.fabfdev.feature.stackselection.fragment.ChooseStackFragment"
         android:label="ChooseStackFragment"
         tools:layout="@layout/fragment_choose_stack">
-        <action
-            android:id="@+id/action_chooseStackFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+        <deepLink app:uri="rocketia://choose-stack" />
     </fragment>
 
     <fragment
@@ -33,9 +24,7 @@
         android:name="br.com.fabfdev.rocketia.ui.fragment.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_chooseStackFragment"
-            app:destination="@id/chooseStackFragment" />
+        <deepLink app:uri="rocketia://home" />
     </fragment>
 
 </navigation>
