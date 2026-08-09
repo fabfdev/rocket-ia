@@ -42,6 +42,14 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:domain"))
+    implementation(project(":core:data"))
+    implementation(project(":core:ui"))
+    implementation(project(":core:common"))
+    implementation(project(":core:navigation"))
+    implementation(project(":feature:onboarding"))
+    implementation(project(":feature:stackselection"))
+//    implementation(project(":feature:aichat"))
     implementation(libs.lottie)
     implementation(libs.bundles.navigation)
     implementation(platform(libs.firebase.bom))

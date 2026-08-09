@@ -1,7 +1,4 @@
 <resources>
-    <string name="app_name">RocketIA</string>
-    <string name="qual_area_de_programacao_vamos_estudar_juntos">Qual área de programação vamos estudar juntos?</string>
-    <string name="confirmar">Confirmar</string>
     <string name="ola_dev">Olá, Dev!\nVamos começar seus estudos sobre %1$s?</string>
     <string name="o_que_e_a_classe_context">O que é a classe Context?</string>
     <string name="a_classe_context_e_uma_classe_abstrata_do_android">A classe Context é uma classe abstrata do Android que permite acessar informações globais sobre o ambiente de uma aplicação. Ela é a classe base para Activity, Service e Application.</string>

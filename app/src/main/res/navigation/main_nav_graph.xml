@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/chooseStackFragment"
-        android:name="br.com.fabfdev.rocketia.ui.fragment.ChooseStackFragment"
+        android:name="br.com.fabfdev.feature.stackselection.fragment.ChooseStackFragment"
         android:label="ChooseStackFragment"
         tools:layout="@layout/fragment_choose_stack">
         <action
